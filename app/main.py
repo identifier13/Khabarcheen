@@ -1,6 +1,6 @@
 from pyrogram import Client 
 from config.config import getdata
-from base.new_post import is_new
+from base.new_post import get_news
 import aiocron
 
 
@@ -16,7 +16,7 @@ bot = Client(
 
 @aiocron.crontab('*/15 * * * *')
 async def work():
-    await is_new(bot,channel_id)
+    await get_news(bot,channel_id)
 
 
 if  __name__ == '__main__':

@@ -2,7 +2,7 @@ from base.all_site import new_data
 import json
 
 
-async def is_new(bot, channel):
+async def get_news(bot, channel):
     with open('db/db.json', 'r') as f:
         datadb = json.load(f)
     
